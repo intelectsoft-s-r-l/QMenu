@@ -32,11 +32,7 @@ class _BottomScrollListState extends State<BottomScrollList> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Color.fromRGBO(
-                        (255/widget.list.indexOf(index)).ceil(),
-                        0 + (widget.list.indexOf(index) * 40).abs(),
-                        0 + (widget.list.indexOf(index) * 20).abs(),
-                        .7),
+                    const Color.fromRGBO(255, 0, 0, .7),
                     Colors.amber.withOpacity(.7),
                   ],
                 ).createShader(bounds),
@@ -44,7 +40,8 @@ class _BottomScrollListState extends State<BottomScrollList> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.network(
-                        'https://fastly.4sqi.net/img/general/200x200/11590240_Dr00h6RJYsW6wpjzAFVHam7jjGG4M0M36jCjzzLFMvg.jpg'),
+                      'https://fastly.4sqi.net/img/general/200x200/11590240_Dr00h6RJYsW6wpjzAFVHam7jjGG4M0M36jCjzzLFMvg.jpg',
+                    ),
                   ),
                 ),
               ),

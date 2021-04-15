@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:qmenu/presentation/bottom_navigation_bar/bottom_nav_bar.dart';
 import 'package:qmenu/presentation/widgets/fon_image_widget.dart';
 
-class GPSScreen extends StatelessWidget {
+class GPSScreen extends StatefulWidget {
   const GPSScreen({Key? key}) : super(key: key);
 
+  @override
+  _GPSScreenState createState() => _GPSScreenState();
+}
+
+void getPermision() async {
+  final position = await Geolocator.getCurrentPosition();
+  print(position);
+}
+
+class _GPSScreenState extends State<GPSScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -21,7 +33,10 @@ class GPSScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context)=>const BottomNavigationBarWidget()));
+              },
               child: const Text('Skip'),
             ),
           ),
@@ -51,7 +66,7 @@ class GPSScreen extends StatelessWidget {
               child: Text(
                 'Porniti GPS-ul pentru a gasi',
                 style: TextStyle(
-                  fontSize: 23,
+                  fontSize: 20,
                   color: Colors.white.withOpacity(0.6),
                 ),
               ),
@@ -65,7 +80,7 @@ class GPSScreen extends StatelessWidget {
               child: Text(
                 'propuneri de restaurante mai bune',
                 style: TextStyle(
-                  fontSize: 23,
+                  fontSize: 20,
                   color: Colors.white.withOpacity(0.6),
                 ),
               ),
@@ -77,7 +92,7 @@ class GPSScreen extends StatelessWidget {
             child: Text(
               'linga tine.',
               style: TextStyle(
-                fontSize: 23,
+                fontSize: 20,
                 color: Colors.white.withOpacity(0.6),
               ),
             ),
@@ -95,7 +110,7 @@ class GPSScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: getPermision,
                 child: const Text('Porniti GPS'),
               ),
             ),

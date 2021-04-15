@@ -4,9 +4,11 @@ class TopScrollList extends StatelessWidget {
   const TopScrollList({
     Key? key,
     required this.list,
+    required this.axis,
   }) : super(key: key);
 
   final List list;
+  final Axis axis;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class TopScrollList extends StatelessWidget {
       height: 150,
       child: ListView.separated(
         itemCount: list.length,
-        scrollDirection: Axis.horizontal,
+        scrollDirection: axis,
         separatorBuilder: (context, index) => const SizedBox(
           width: 15,
         ),
@@ -65,7 +67,7 @@ class TopScrollList extends StatelessWidget {
                   right: 10,
                   child: Container(
                       alignment: Alignment.center,
-                      width: 40,
+                      width: 42,
                       // height: 30,
                       padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
@@ -110,8 +112,7 @@ class TopScrollList extends StatelessWidget {
                         child: Text(
                           list[index]['menu'],
                           style: const TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600),
+                              fontSize: 14, fontWeight: FontWeight.w600),
                         ),
                       ),
                       const SizedBox(width: 5),
@@ -124,8 +125,7 @@ class TopScrollList extends StatelessWidget {
                         child: Text(
                           '${list[index]['distance']} Km',
                           style: const TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600),
+                              fontSize: 14, fontWeight: FontWeight.w600),
                         ),
                       ),
                     ],
