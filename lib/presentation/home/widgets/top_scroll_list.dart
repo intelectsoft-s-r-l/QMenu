@@ -13,7 +13,7 @@ class TopScrollList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
+      height: 220,
       child: ListView.separated(
         itemCount: list.length,
         scrollDirection: axis,
@@ -29,7 +29,7 @@ class TopScrollList extends StatelessWidget {
             child: Stack(
               children: [
                 Container(
-                  width: 250,
+                  width: 300,
                   height: 100,
                   child: ClipRRect(
                     borderRadius: const BorderRadius.only(

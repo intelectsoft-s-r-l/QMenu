@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:qmenu/presentation/favorites/favorites_screen.dart';
 import 'package:qmenu/presentation/home/home_screen.dart';
@@ -42,12 +43,13 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
           right: 2,
           left: 2,
         ),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(22),
             topRight: Radius.circular(22),
           ),
-          color: Colors.red,
+          // color: Colors.red,
+          boxShadow: [BoxShadow(color: Colors.grey, offset: Offset(0, 8), blurRadius: 3.0, spreadRadius: 3.0),BoxShadow(color: Colors.grey.shade300, offset: Offset(1, 0), blurRadius: 8.0, spreadRadius: 0.2)]
         ),
         child: Container(
           //padding: EdgeInsets.symmetric(horizontal: 15),
@@ -56,7 +58,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
             borderRadius: BorderRadiusDirectional.only(
                 topStart: Radius.circular(20), topEnd: Radius.circular(20)),
           ),
-          height: 60,
+          height: 70,
           width: size.width,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
