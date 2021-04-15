@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:qmenu/presentation/bottom_navigation_bar/bottom_nav_bar.dart';
+import 'package:qmenu/presentation/splash/gps_activation_screen.dart';
 import 'package:qmenu/presentation/widgets/fon_image_widget.dart';
+import 'package:qmenu/presentation/widgets/phone_icon.dart';
 
 class QMenuAuthScreen extends StatefulWidget {
   @override
@@ -39,25 +42,36 @@ class _QMenuAuthScreenState extends State<QMenuAuthScreen> {
                       height: size.height * .162,
                     ),
                     Container(
-                      width: size.width * .7,
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'Telefon',
-                          prefixIcon: PhoneIcon(),
-                          fillColor: Colors.white.withOpacity(.2),
-                          filled: true,
-                          hintStyle: const TextStyle(
-                              color: Colors.white, fontFamily: 'JosefinSans'),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide.none,
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(
+                      width: size.width * .8,
+                      child: Form(
+                        autovalidateMode: AutovalidateMode.always,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.zero,
+                            hintText: 'Telefon',
+                            prefixIcon: const PhoneIcon(
                               color: Colors.white,
                             ),
+                            fillColor: Colors.white.withOpacity(.2),
+                            filled: true,
+                            hintStyle: const TextStyle(
+                                color: Colors.white, fontFamily: 'JosefinSans'),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide.none,
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: const BorderSide(
+                                color: Colors.white,
+                              ),
+                            ),
                           ),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'IS empty';
+                            }
+                          },
                         ),
                       ),
                     ),
@@ -80,20 +94,35 @@ class _QMenuAuthScreenState extends State<QMenuAuthScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Image.asset(
-                          'assets/images/facebook.png',
-                          filterQuality: FilterQuality.high,
-                          height: 50,
+                        GestureDetector(
+                          onTap: () {
+                            print('Google is tapped');
+                          },
+                          child: Image.asset(
+                            'assets/images/facebook.png',
+                            filterQuality: FilterQuality.high,
+                            height: 50,
+                          ),
                         ),
-                        Image.asset(
-                          'assets/images/google.png',
-                          filterQuality: FilterQuality.high,
-                          height: 50,
+                        GestureDetector(
+                          onTap: () {
+                            print('Facebook is tapped');
+                          },
+                          child: Image.asset(
+                            'assets/images/google.png',
+                            filterQuality: FilterQuality.high,
+                            height: 50,
+                          ),
                         ),
-                        Image.asset(
-                          'assets/images/apple.png',
-                          filterQuality: FilterQuality.high,
-                          height: 50,
+                        GestureDetector(
+                          onTap: () {
+                            print('Apple is tapped');
+                          },
+                          child: Image.asset(
+                            'assets/images/apple.png',
+                            filterQuality: FilterQuality.high,
+                            height: 50,
+                          ),
                         ),
                       ],
                     ),
@@ -104,7 +133,12 @@ class _QMenuAuthScreenState extends State<QMenuAuthScreen> {
                       width: size.width * .7,
                       height: size.height * .06,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const GPSScreen()));
+                        },
                         style: ElevatedButton.styleFrom(
                           primary: const Color(0xFF5663FF),
                           shape: RoundedRectangleBorder(
@@ -135,31 +169,6 @@ class _QMenuAuthScreenState extends State<QMenuAuthScreen> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class PhoneIcon extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Container(
-          height: 30,
-          width: 30,
-          //padding: EdgeInsets.zero,
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.white),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: const Icon(
-            Icons.phone,
-            color: Colors.white,
-            //size: 20,
-          ),
-        ),
-      ],
     );
   }
 }

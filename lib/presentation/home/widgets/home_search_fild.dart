@@ -11,7 +11,9 @@ class HomeSearchField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: TextFormField(
         decoration: InputDecoration(
+          contentPadding: EdgeInsets.zero,
           filled: false,
+          focusColor: Colors.white,
           hintText: 'Cauta Restaurante',
           prefixIcon: const Icon(Icons.search),
           suffixIcon: const Icon(Icons.tune_rounded),

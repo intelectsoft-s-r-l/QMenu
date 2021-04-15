@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
       'menu': 'Moldoveneasca',
       'distance': 12
     },
-     {
+    {
       'url':
           'https://www.webbsdirect.co.uk/images/stores/WCH-Restaurant-Header-800x800px.jpg',
       'status': 'Deschis',
@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
       'menu': 'Japoneza',
       'distance': 12
     },
-     {
+    {
       'url':
           'https://www.webbsdirect.co.uk/images/stores/WCH-Restaurant-Header-800x800px.jpg',
       'status': 'Deschis',
@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget {
       'menu': 'Chineza',
       'distance': 12
     },
-     {
+    {
       'url':
           'https://www.webbsdirect.co.uk/images/stores/WCH-Restaurant-Header-800x800px.jpg',
       'status': 'Deschis',
@@ -81,6 +81,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       body: Container(
         width: size.width,
         height: size.height,
@@ -110,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              TopScrollList(list: list),
+              TopScrollList(list: list, axis: Axis.horizontal),
               const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -137,4 +138,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
