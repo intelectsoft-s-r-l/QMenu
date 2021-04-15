@@ -80,6 +80,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    const _kFontFam = 'MyFlutterApp';
+    const String? _kFontPkg = null;
+
+    const IconData home_1 = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: Container(
@@ -87,6 +92,7 @@ class HomeScreen extends StatelessWidget {
         height: size.height,
         child: SingleChildScrollView(
           child: Column(
+            
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(

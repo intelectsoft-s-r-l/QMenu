@@ -1,38 +1,7 @@
-import 'dart:async';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-import 'package:qmenu/presentation/auth/auth_screen.dart';
 import 'package:qmenu/presentation/widgets/fon_image_widget.dart';
 
-class QMenuSplash extends StatefulWidget {
-  @override
-  _QMenuSplashState createState() => _QMenuSplashState();
-}
-
-class _QMenuSplashState extends State<QMenuSplash> {
-  @override
-  void initState() {
-    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
-    super.initState();
-    _loadPage();
-  }
-
-  _loadPage() {
-    return Timer(const Duration(seconds: 5), _navigatePage);
-  }
-
-  _navigatePage() {
-    Navigator.pushReplacement(
-      context,
-      CupertinoPageRoute(
-        builder: (BuildContext context) => QMenuAuthScreen(),
-      ),
-    );
-  }
-
+class QMenuSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -48,7 +17,7 @@ class _QMenuSplashState extends State<QMenuSplash> {
                 alignment: Alignment.center,
                 child: Text(
                   'QMenu',
-                  style: Theme.of(context).textTheme.headline1,
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
               ),
             ),

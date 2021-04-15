@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:qmenu/presentation/auth/auth_screen.dart';
+import 'package:qmenu/presentation/home/home_screen.dart';
 
+import 'package:qmenu/presentation/splash/gps_activation_screen.dart';
 import 'package:qmenu/presentation/splash/q_menu_splash.dart';
 
 void main() {
@@ -25,7 +28,7 @@ class MyApp extends StatelessWidget {
             color: Colors.white,
             fontFamily: 'JosefinSans',
             fontStyle: FontStyle.normal,
-            fontSize: 25,
+            fontSize: 45,
           ),
           button: TextStyle(
             color: Colors.white,
@@ -44,11 +47,6 @@ class MyApp extends StatelessWidget {
             fontFamily: 'JosefinSans',
             //fontStyle: FontStyle.normal,
             fontSize: 18,
-          ),
-          headline1: TextStyle(
-            color: Color(0xFF3E3F68),
-            fontFamily: 'JosefinSans',
-            fontSize: 55,
           ),
         ),
         /*  inputDecorationTheme: InputDecorationTheme( */
@@ -70,6 +68,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return  QMenuSplash(); 
+    return HomeScreen(); /* QMenuAuthScreen(); */ /* QMenuSplash(); */ /* const GPSScreen(); */
+
+  //  test push
   }
 }
