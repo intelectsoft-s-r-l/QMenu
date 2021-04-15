@@ -43,57 +43,32 @@ class _GPSScreenState extends State<GPSScreen> {
           Positioned(
             top: size.height * .35,
             left: size.width * .12,
-            child: const Text('Salut John,'),
+            child: const Text('Salut John,', style: TextStyle(fontSize: 55)),
           ),
           Positioned(
             top: size.height * .42,
             left: size.width * .12,
-            child: const Text('Bine ai venit in'),
+            child: const Text('Bine ai venit in' , style: TextStyle(fontSize: 55),),
           ),
           Positioned(
             top: size.height * .49,
             left: size.width * .12,
             child: const Text(
               'QMenu',
-              style: TextStyle(color: Color(0xFFFFCC00)),
+              style: TextStyle(color: Color(0xFFFFCC00) ,fontSize: 55),
             ),
           ),
           Positioned(
-            top: size.height * .66,
+            top: size.height * .70,
             left: size.width * .12,
             child: Container(
               width: size.width * .76,
               child: Text(
-                'Porniti GPS-ul pentru a gasi',
+                'Porniti GPS-ul pentru a gasi\npropuneri de restaurante mai bune linga tine.',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 30,
                   color: Colors.white.withOpacity(0.6),
                 ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: size.height * .7,
-            left: size.width * .12,
-            child: Container(
-              width: size.width * .76,
-              child: Text(
-                'propuneri de restaurante mai bune',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white.withOpacity(0.6),
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: size.height * .74,
-            left: size.width * .12,
-            child: Text(
-              'linga tine.',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.white.withOpacity(0.6),
               ),
             ),
           ),

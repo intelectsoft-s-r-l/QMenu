@@ -43,11 +43,12 @@ class _QMenuAuthScreenState extends State<QMenuAuthScreen> {
                     ),
                     Container(
                       width: size.width * .8,
+
                       child: Form(
                         autovalidateMode: AutovalidateMode.always,
                         child: TextFormField(
                           decoration: InputDecoration(
-                            contentPadding: EdgeInsets.zero,
+                            // contentPadding: EdgeInsets.zero,
                             hintText: 'Telefon',
                             prefixIcon: const PhoneIcon(
                               color: Colors.white,
@@ -67,11 +68,15 @@ class _QMenuAuthScreenState extends State<QMenuAuthScreen> {
                               ),
                             ),
                           ),
+                          style: TextStyle(color: Colors.white , fontSize: 25),
+                          cursorColor: Colors.white,
+                          cursorHeight: 25,
                           validator: (value) {
                             if (value!.isEmpty) {
                               return 'IS empty';
                             }
                           },
+
                         ),
                       ),
                     ),
